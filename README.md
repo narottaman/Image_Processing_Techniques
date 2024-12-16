@@ -1,6 +1,6 @@
 # Image Processing Techniques: A Comprehensive Guide
 
-This repository demonstrates a variety of image processing techniques using Python libraries such as **OpenCV**, **PIL**, and **Matplotlib**. The project includes grayscale conversion, normalization, equalization, edge detection, thresholding, and contour detection.
+This repository demonstrates a variety of image processing techniques using Python libraries such as **OpenCV**, **PIL**, and **Matplotlib**. The project includes grayscale conversion, normalization, equalization, edge detection, thresholding (single and multi-level Otsu's), and contour detection.
 
 ---
 
@@ -35,13 +35,18 @@ This project applies common image processing techniques to pre-process images fo
 4. **Thresholding**
    - Converts the image into a binary format using global and adaptive thresholding.
 
-5. **Contour Detection**
+5. **Otsu's Single and Multi-Thresholding**
+   - Automatically determines optimal thresholds for binarization:
+     - **Single Thresholding**: Divides the image into two classes (foreground and background).
+     - **Multi-Thresholding**: Divides the image into multiple regions.
+
+6. **Contour Detection**
    - Identifies and outlines object boundaries within the image.
 
-6. **Gaussian Blurring**
+7. **Gaussian Blurring**
    - Reduces image noise and smoothens the edges for further processing.
 
-7. **Laplacian Filtering**
+8. **Laplacian Filtering**
    - Highlights regions of rapid intensity changes (useful for edge detection).
 
 ---
@@ -95,7 +100,25 @@ The image is normalized and its contrast is equalized.
 
 ---
 
-### 4. Thresholding
+### 4. Otsu's Single and Multi-Thresholding
+
+#### **Otsu's Single Thresholding**
+Otsu's method automatically determines a single threshold value to separate the image into foreground and background.
+
+**Result:**
+
+![Single Threshold](images/Single_Threshold.png)
+
+#### **Otsu's Multi-Thresholding**
+Multi-level Otsu thresholding divides the image into multiple regions based on pixel intensities.
+
+**Result:**
+
+![Multi-Otsu Threshold](images/Lina_multithreshold.png)
+
+---
+
+### 5. Thresholding
 The image is binarized using adaptive thresholding.
 
 **Result:**
@@ -104,7 +127,7 @@ The image is binarized using adaptive thresholding.
 
 ---
 
-### 5. Contour Detection
+### 6. Contour Detection
 Contours are drawn around objects in the binary image.
 
 **Result:**
@@ -113,4 +136,10 @@ Contours are drawn around objects in the binary image.
 
 ---
 
+## Usage
 
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/your-username/image-processing-techniques.git
+   cd image-processing-techniques
